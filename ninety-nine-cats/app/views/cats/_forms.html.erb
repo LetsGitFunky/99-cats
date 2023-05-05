@@ -1,0 +1,27 @@
+<% path = type == :create ? cats_url : cat_url(cat)%>
+<% text = type == :create ? "Create Cat" : "Update Cat"%>
+
+<%= text %>
+
+<form action="<%= path %>" method="POST">
+  <% if type == :edit %>
+    <input type="hidden" name="_method" value="PATCH" />
+  <% end %>
+  <div>
+    <label for="Name">Name:</label>
+    <input id="Name" type="text" name="cat[name]" value="<%= @cat.name %>" />
+  </div>
+  <div>
+    <label for="color">Color:</label>
+    <input id="color" type="text" name="cat[color]" value="<%= @cat.color %>" />
+  </div>
+  <div>
+    <label for="birth_date">Birth Date:</label>
+    <input id="birth_date" type="text" name="cat[birth_date]" value="<%= @cat.birth_date %>" />
+  </div>
+  <div>
+    <label for="evil_score">Evil Score:</label>
+    <input id="evil_score" type="text" name="user[evil_score]" value="<%= @user.evil_score %>" />
+  </div>
+  <input type="submit" value="<%= text %>" />
+</form>
