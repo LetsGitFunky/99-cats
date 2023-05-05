@@ -1,0 +1,12 @@
+<% link = filter == :show ? cats_url : cat_url(cat) %>
+<% text = filter == :show ? 'Link to Index' : 'Link to Show' %>
+<ul>
+    <li>Name: <%= cat.name %></li>
+    <li>Sex: <%= cat.sex %></li>
+    <li>Color: <%= cat.color %></li>
+    <li>Birth Date: <%= cat.birth_date %></li>
+    <li>Description: <%= cat.description %></li>
+    <li>
+        <a href="<%=link%>"> <%=text%> </a>
+    </li>
+</ul>
